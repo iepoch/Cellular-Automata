@@ -64,18 +64,18 @@ while not done:
 
     # --- Drawing code should go here
     cur_index = 0
-    x = 5
+    x = 3.5
     while x < WIN_SIZE:
-        y = 5
+        y = 3.5
         while y < WIN_SIZE:
             state = cur_states[cur_index]
             # 2. Draw  based on vlaues of current_state
             if state == 0:
                 pygame.draw.rect(screen, WHITE, pygame.Rect(x, y, 20, 20))
-            else: 
+            else:
                 pygame.draw.rect(screen, WHITE, pygame.Rect(x, y, 20, 20))
 
-                cur_index +1
+                cur_index + 1
             y += 25
         x += 25
 
