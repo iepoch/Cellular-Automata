@@ -10,6 +10,9 @@ WIN_SIZE = 500
 # Create an initial states.
 cur_states = [0] * 400
 cur_states[10] = 1
+cur_states[30] = 1
+cur_states[50] = 1
+
 next_states = []
 
 # previous_state=[]
@@ -66,14 +69,14 @@ while not done:
     cur_index = 0
     x = 3.5
     while x < WIN_SIZE:
-        y = 3.5
+        y = 3.2
         while y < WIN_SIZE:
             state = cur_states[cur_index]
             # 2. Draw  based on vlaues of current_state
             if state == 0:
                 pygame.draw.rect(screen, WHITE, pygame.Rect(x, y, 20, 20))
             else:
-                pygame.draw.rect(screen, WHITE, pygame.Rect(x, y, 20, 20))
+                pygame.draw.rect(screen, BLACK, pygame.Rect(x, y, 20, 20))
 
                 cur_index + 1
             y += 25
