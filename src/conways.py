@@ -23,6 +23,7 @@ is_paused = False
 for i in range(len(cur_states)):
     cur_states[i] = random.randint(0, 1)
 
+
 pygame.init()
 
 # Set the width and height of the screen [width, height]
@@ -76,9 +77,9 @@ while not done:
     # pygame.draw.rect(surface, color, pygame.Rect(left, top, width, height))
     cur_index = 0
     x = 5
-    while x < 500:
+    while x < WIN_SIZE:
         y = 5
-        while y < 500:
+        while y < WIN_SIZE:
             # 2. draw rectangles based on states
             state = cur_states[cur_index]
             if state == 0:
@@ -93,7 +94,7 @@ while not done:
     pause_button = pygame.draw.rect(
         screen, BLUE, pygame.Rect(200, 420, 100, 50))
     font = pygame.font.Font('freesansbold.ttf', 16)
-    text = font.render('Play/Pause', True, (24, 28, 54))
+    text = font.render('Play/Pause', True, (25, 28, 54))
     screen.blit(text, pause_button)
     # --- Go ahead and update the screen with what we've drawn.
     pygame.display.flip()
