@@ -52,6 +52,7 @@ while not done:
 
     # --- Game logic should go here
     generation += 1
+    neighbors = 0
     pygame.display.set_caption(
         f"Conway's Game of Life, Generation: {generation}")
     if event.type == pygame.MOUSEBUTTONDOWN:
@@ -66,9 +67,16 @@ while not done:
     # 3. night 2: work on rules that i) look at all neighbors, ii) save new state in
     if not is_paused:
         next_states = [0] * 400
+        for item in cur_states:
+            if cur_states[item] >= 2:
+                next_states += 1
+            if cur_states[item] == 3:
+                next_states += 1
+            if cur_states[item] > 3:
+                next_state += 0
 
-    # --- Screen-clearing code goes here
-
+        next_states[item] = cur_states
+            
     # Here, we clear the screen to gray. Don't put other drawing commands
     # above this, or they will be erased with this command.
     screen.fill(GRAY)
